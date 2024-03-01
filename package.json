@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-loader": "^8.1.1",
+    "postcss-px-to-viewport": "^1.1.1"
   }
 }
