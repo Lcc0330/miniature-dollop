@@ -1,0 +1,187 @@
+.UserInfo {
+    padding-bottom: 95px;
+    &-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ea6b42;
+        height: 80px;
+        border-bottom: 1px solid #ccc;
+        padding-left: 30px;
+        padding-right: 20px;
+        background-color: white;
+        z-index: 9999;
+        &-icon{
+            background-image: url(../img//back.png);
+            height: 100%;
+            width: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &-title{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+      }
+  &-base {
+    height: 360px;
+    background-image: url(http://www.idt.cxc-m-web.com/themes/default/Images/my_xueyuan/background.png);
+    background-size: cover;
+    display: flex;
+    padding-top: 120px;
+    position: relative;
+    z-index: 998;
+    &-user {
+      text-align: center;
+      flex: 1;
+      justify-content: center;
+      &-pic {
+        width: 130px;
+        height: 130px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #dddcda;
+        position: relative;
+        img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+           
+        }
+      }
+      &-name {
+        font-size: 28px;
+        font-weight: 600;
+        color: white;
+      }
+    }
+    &-info {
+      font-size: 24px;
+      font-weight: 400;
+      color: white;
+      flex: 1;
+      justify-content: center;
+      &-text {
+        margin-bottom: 5px;
+      }
+
+      &-vipmoney{
+        display: flex;
+        color:#ea6b42 ;
+        text-align: center;
+      }
+      &-money{
+        border-radius: 8px;
+        display: flex;
+        background-color: white;
+        >div{
+            width: 115px;
+        }
+
+      }
+      &-vip{
+        border-radius: 8px;
+        background-color: white;
+        width: 115px;
+      }
+    }
+
+  }
+
+  &-subject{
+    background-color: #e4e4e4;
+    &-title{
+        font-size: 23px;
+        color: #66667f;
+        background-color: white;
+        padding: 30px 40px;
+        font-weight: 400;
+    }
+    &-itemWrap{
+        display: flex;
+        background-color: white;
+        margin-bottom: 15px;
+
+        // margin-top: 15px;
+    }
+    &-item{
+        // min-width: 25%;
+        flex: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        background-color: white;
+        &-tip{
+            position: absolute;
+            color: white;
+            background-color: red;
+            border-radius: 70%;
+            top: 0px;
+            right: 0px;
+            padding: 5px;
+            transform: translateY(-50%);
+        }
+        &-extr{
+            color: red;
+            padding: 15px 20px;
+            background-color: white;
+            margin-top: -14px;
+            margin-bottom: 15px;
+        }
+        &-pic{
+            width: 45px;
+            height: 45px;
+            // background-color: blue;
+            margin-bottom: 20px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-text{
+            font-size: 16px;
+
+        }
+        
+    }
+
+    &-itemWrap2 > &-item{
+        flex: 1 1 24% !important;
+    }
+  }
+  &-bottom{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    font-size: 18px;
+    text-align: center;
+    color: #b8b8b8;
+    background-color: white;
+    align-items: center;
+    &-item{
+        flex: 1;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+    }
+    &-activeItem{
+        color: #ea6b42;
+    }
+  }
+}

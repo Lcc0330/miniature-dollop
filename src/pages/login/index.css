@@ -1,0 +1,139 @@
+.login {
+  text-align: center;
+  color: #959597;
+  min-height: 100vh;
+}
+.login-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ea6b42;
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.login-top-icon {
+  background-image: url(../img//back.png);
+  height: 100%;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login-top-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.login-top-adress {
+  font-size: 20px;
+}
+.login-banner {
+  width: 375px;
+  margin-top: 100px;
+}
+.login-title {
+  font-size: 35px;
+  font-weight: 900;
+}
+.login-tabWarp {
+  display: flex;
+  text-align: center;
+}
+.login-tab {
+  width: 25%;
+  position: relative;
+  font-size: 24px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ccc;
+}
+.login-activetab {
+  color: #ea6b42;
+}
+.login-line {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ea6b42;
+}
+.login-operate {
+  width: 75%;
+  margin: 0 auto;
+}
+.login-operate input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 20px;
+}
+.login-user {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  margin: 30px auto 0px;
+}
+.login-user-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/user.png);
+  background-size: cover;
+}
+.login-user-clear {
+  width: 30px;
+  height: 30px;
+  background-image: url(../img//close.png);
+  background-size: 100%;
+}
+.login-user-check {
+  width: 35px;
+  height: 35px;
+  background-image: url(../img/check.png);
+  background-size: 100%;
+}
+.login-passWord {
+  margin: 30px auto 0px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.login-passWord-icon {
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/passwork.png);
+  background-size: cover;
+}
+.login-passWord-clear {
+  width: 30px;
+  height: 30px;
+  background-image: url(../img//close.png);
+  background-size: 100%;
+}
+.login-forget {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #ea6b42;
+  text-align: left;
+}
+.login-forget span {
+  border-bottom: 1px solid #ccc;
+}
+.login-operateBtn {
+  margin-top: 100px;
+  width: 75%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+.login-operateBtn-bangding {
+  padding: 20px 0px;
+  background-color: #ec6941;
+  border-radius: 4px;
+}
+.login-operateBtn-login {
+  margin-top: 15px;
+  padding: 20px 0px;
+  background-color: #8ebf60;
+  border-radius: 4px;
+}

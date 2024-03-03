@@ -1,38 +1,101 @@
-.App {
+.main-banner {
+  width: 750px;
+  height: 490px;
+  background: url(http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/advImage/carouselImage/20170303060941-%E5%B9%BF%E5%91%8A_201733180916_14.jpg);
+  background-size: cover;
+}
+.main-content {
   text-align: center;
+  padding: 10px;
+  gap: 10px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main-content-title {
+  font-size: 23px;
   color: white;
+  font-weight: 900;
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-.App-link {
-  color: #61dafb;
+.main-content-top {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  margin-bottom: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content-top img {
+  height: 260px;
+  width: 100%;
+}
+.main-content-top-one {
+  background-color: red;
+  height: 260px;
+  flex: 1;
+  position: relative;
+}
+.main-content-top-two {
+  height: 260px;
+  flex: 2 ;
+  display: flex;
+  column-gap: 10px;
+  position: relative;
+}
+.main-content-top-two-one {
+  flex: 1;
+  position: relative;
+}
+.main-content-top-two-three {
+  flex: 1;
+  background-color: red;
+  position: relative;
+}
+.main-content-middle {
+  display: flex;
+  column-gap: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.main-content-middle-one {
+  flex: 1;
+  background-color: #16aa3c;
+  height: 260px;
+  position: relative;
+}
+.main-content-middle-two {
+  position: relative;
+  flex: 2 ;
+  height: 260px;
+  background-color: #e55813;
+}
+.main-content-middle-two img {
+  height: 100%;
+  width: 100%;
+}
+.main-content-middle img {
+  height: 260px;
+  width: 100%;
+}
+.main-content-bottom {
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-between;
+}
+.main-content-bottom > div {
+  flex: 1;
+  height: 260px;
+}
+.main-content-bottom img {
+  height: 260px;
+  width: 100%;
+}
+.main-content-bottom-one {
+  background-size: cover;
+  background-image: url(http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/advImage/contentImage/20170324052824-%E5%B9%BF%E5%91%8A_2017324172820_AD1.jpg);
+}
+.main-content-bottom-two {
+  background-color: #9588e4;
+  position: relative;
 }

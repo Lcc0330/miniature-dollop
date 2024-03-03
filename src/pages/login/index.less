@@ -1,0 +1,151 @@
+.login {
+  text-align: center;
+  color: #959597;
+  min-height: 100vh;
+  &-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ea6b42;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 30px;
+    padding-right: 20px;
+    &-icon{
+        background-image: url(../img//back.png);
+        height: 100%;
+        width: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &-title{
+        font-size: 24px;
+        font-weight: 700;
+        
+    }
+    &-adress{
+        font-size: 20px;
+
+    }
+  }
+  &-banner {
+    width: 375px;
+    margin-top: 100px;
+    // height: 125px;
+    // width: 200px;
+    // background-image: url(http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/%E6%B1%9F%E8%8B%8F%E9%A9%BE%E5%9F%B9/%E9%A6%96%E9%A1%B5/login_logo.png);
+    // background-size: 100%;
+  }
+  &-title {
+    font-size: 35px;
+    font-weight: 900;
+  }
+  &-tabWarp {
+    display: flex;
+    text-align: center;
+  }
+  &-tab {
+    width: 25%;
+    position: relative;
+    font-size: 24px;
+    // color: #ea6b42 ;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ccc;
+  }
+  &-activetab {
+    color: #ea6b42;
+  }
+  &-line {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #ea6b42;
+  }
+  &-operate {
+    width: 75%;
+    margin: 0 auto;
+    input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 20px;
+    }
+  }
+  &-user {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin: 30px auto 0px;
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+      background-image: url(../img/user.png);
+      background-size: cover;
+    }
+    &-clear {
+      width: 30px;
+      height: 30px;
+      // background-color: #ccc;
+      background-image: url(../img//close.png);
+      background-size: 100%;
+    }
+    &-check {
+      width: 35px;
+      height: 35px;
+      // background-color: green;
+      background-image: url(../img/check.png);
+      background-size: 100%;
+    }
+  }
+  &-passWord {
+    margin: 30px auto 0px;
+
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    &-icon {
+      width: 40px;
+      height: 40px;
+      background-image: url(../img/passwork.png);
+      background-size: cover;
+    }
+    &-clear {
+      width: 30px;
+      height: 30px;
+      background-image: url(../img//close.png);
+      background-size: 100%;
+    }
+  }
+  &-forget {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #ea6b42;
+    text-align: left;
+    span{
+        border-bottom: 1px solid #ccc;
+    }
+  }
+  &-operateBtn {
+    margin-top: 100px;
+    width: 75%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+
+    &-bangding {
+      padding: 20px 0px;
+      background-color: #ec6941;
+      border-radius: 4px;
+    }
+    &-login {
+      margin-top: 15px;
+      padding: 20px 0px;
+      background-color: #8ebf60;
+      border-radius: 4px;
+    }
+  }
+}
