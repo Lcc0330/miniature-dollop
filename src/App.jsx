@@ -11,6 +11,7 @@ import styles from './App.css'
 const preFixCls = 'main'
 function App () {
   const navigate= useNavigate()
+  //生成mock
   const aa=()=>{
     const idNumber = "510"+Math.random().toString().slice(2,14)+(Math.floor(Math.random()*90)+10).toString()
     const projects =['C1','C2','A1','A2']
@@ -39,12 +40,7 @@ function App () {
 
 
   useEffect(()=>{
-    const bb=[]
-    for(let i=1;i<21;i++){
-      const a=aa()
-      bb.push(a)
-    }
-    console.log(bb)
+
   },[])
   return (
     <div className={styles[preFixCls]}>

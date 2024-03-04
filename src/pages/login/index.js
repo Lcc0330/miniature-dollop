@@ -27,8 +27,10 @@ const Login = props => {
       }
       const data = (await response.json()) || []
       if (Array.isArray(data)) {
-        const findItem = data?.find(item => item?.idNumber === userId)
-        console.log(response, 'sdd', data, findItem)
+        const findItem = data?.find(item => {
+          return item?.idNumber + '' === userId + ''
+        })
+        console.log(response, 'sdd', data, findItem, userId)
         if (findItem) {
           navigate('/user', { state: findItem })
         } else {
