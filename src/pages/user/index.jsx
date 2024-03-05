@@ -61,7 +61,7 @@ const UserInfo = () => {
 
         <div className='UserInfo-base-info'>
           <div className='UserInfo-base-info-text'>
-            驾校： {info?.drivingSchool || '恒安'}
+            驾校： {info?.drivingSchool}
           </div>
           <div className='UserInfo-base-info-text'>类型： {info?.category}</div>
           <div className='UserInfo-base-info-text'>状态： {info?.status}</div>
@@ -71,11 +71,11 @@ const UserInfo = () => {
             <div className='UserInfo-base-info-money'>
               <div>
                 <div>余额</div>
-                <div>0.00%</div>
+                <div>0.00￥</div>
               </div>
               <div style={{ borderLeft: '1px solid #ccc' }}>
                 <div>累计充值</div>
-                <div>0.00%</div>
+                <div>0.00￥</div>
               </div>
             </div>
            
