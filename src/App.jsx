@@ -12,31 +12,6 @@ const preFixCls = 'main'
 function App () {
   const navigate= useNavigate()
   //生成mock
-  const aa=()=>{
-    const idNumber = "510"+Math.random().toString().slice(2,14)+(Math.floor(Math.random()*90)+10).toString()
-    const projects =['C1','C2','A1','A2']
-    const project =projects[Math.floor(Math.random()*projects.length)]
-
-    const drivingSchools =['A驾校','B驾校','C驾校']
-    const drivingSchool=drivingSchools[Math.floor(Math.random()*drivingSchools.length)]
-
-    const phonePres=['138','139','131','151','181','150','187','152']
-    const phone=phonePres[Math.floor(Math.random()*phonePres.length)]+Math.random().toString().slice(2,10)
-
-    const graduations =['已结业','未结业','结业中']
-    const graduation=graduations[Math.floor(Math.random()*graduations.length)]
-
-    const name="ZHANG"+Math.random().toString().slice(2,14)+(Math.floor(Math.random()*90)+10).toString()
-    return{
-      idNumber,
-      name,
-      phone,
-      project,
-      drivingSchool
-
-    }
-
-  }
 
 
   useEffect(()=>{
