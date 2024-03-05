@@ -32,7 +32,6 @@
   width: 100%;
 }
 .main-content-top-one {
-  background-color: red;
   height: 260px;
   flex: 1;
   position: relative;
@@ -50,7 +49,6 @@
 }
 .main-content-top-two-three {
   flex: 1;
-  background-color: red;
   position: relative;
 }
 .main-content-middle {
@@ -62,7 +60,6 @@
 }
 .main-content-middle-one {
   flex: 1;
-  background-color: #16aa3c;
   height: 260px;
   position: relative;
 }
@@ -70,7 +67,6 @@
   position: relative;
   flex: 2 ;
   height: 260px;
-  background-color: #e55813;
 }
 .main-content-middle-two img {
   height: 100%;
