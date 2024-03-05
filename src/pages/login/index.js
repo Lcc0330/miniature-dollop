@@ -32,7 +32,7 @@ const Login = props => {
         })
         console.log(response, 'sdd', data, findItem, userId)
         if (findItem) {
-          navigate('/user', { state: findItem })
+          navigate('/user', { state: { data: findItem } })
         } else {
           alert('-1||不存在此身份证号的学员')
         }

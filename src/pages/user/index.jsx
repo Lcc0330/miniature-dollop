@@ -33,7 +33,7 @@ const UserInfo = () => {
 //   console.log(location, 'location')
   useEffect(() => {
     if (location.state) {
-      setInfo(location.state)
+      setInfo(location.state?.data||{})
     }
   }, [location.state])
   return (
@@ -61,7 +61,7 @@ const UserInfo = () => {
 
         <div className='UserInfo-base-info'>
           <div className='UserInfo-base-info-text'>
-            驾校： {info?.drivingSchool}
+            驾校： {info?.drivingSchool || '恒安'}
           </div>
           <div className='UserInfo-base-info-text'>类型： {info?.category}</div>
           <div className='UserInfo-base-info-text'>状态： {info?.status}</div>
@@ -117,28 +117,28 @@ const UserInfo = () => {
         </div>
         <div>
           <div className='UserInfo-subject-itemWrap'>
-            <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {title:'训练信息',type:'km1'} })}>
+            <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'km1'},data:info} })}>
               <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目一}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu1} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目一</div>
             </div>
-            <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {title:'训练信息',type:'km2'} })}>
+            <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state:{pageType: {title:'训练信息',type:'km2'},data:info} })}>
               <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目二}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu2} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目二</div>
             </div>
-            <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {title:'训练信息',type:'km3'} })}>
+            <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'km3'},data:info} })}>
               <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目三}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu3} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目三</div>
             </div>
-            <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {title:'训练信息',type:'jl'} })}>
+            <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'jl'},data:info} })}>
               <div className='UserInfo-subject-item-tip'> {(info?.subject_hours?.科目一+info?.subject_hours?.科目二+info?.subject_hours?.科目三)?.toFixed(2)}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={jilu} alt='' />
@@ -184,13 +184,13 @@ const UserInfo = () => {
             </div>
             <div className='UserInfo-subject-item-text'>修改密码</div>
           </div>
-          <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {title:'驾校评价',type:'jxpj'} })}>
+          <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {pageType:{title:'驾校评价',type:'jxpj'},data:info} })}>
             <div className='UserInfo-subject-item-pic'>
               <img src={jxpingjia} alt='' />
             </div>
             <div className='UserInfo-subject-item-text' >驾校评价</div>
           </div>
-          <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {type:'myd'} })}>
+          <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {pageType:{type:'myd'},data:info} })}>
             <div className='UserInfo-subject-item-pic'>
               <img src={kemupingjia} alt='' />
             </div>
