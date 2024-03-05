@@ -1,7 +1,8 @@
 .main-banner {
   width: 750px;
   height: 490px;
-  background: url(http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/advImage/carouselImage/20170303060941-%E5%B9%BF%E5%91%8A_201733180916_14.jpg);
+  background: url(pages/img/banner.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
 .main-content {
@@ -10,9 +11,10 @@
   gap: 10px;
 }
 .main-content-title {
-  font-size: 23px;
+  font-size: 26px;
   color: white;
   font-weight: 900;
+  white-space: nowrap;
   display: block;
   position: absolute;
   top: 15px;
@@ -92,8 +94,10 @@
   width: 100%;
 }
 .main-content-bottom-one {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(pages/img/考试.jpg);
   background-size: cover;
-  background-image: url(http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/advImage/contentImage/20170324052824-%E5%B9%BF%E5%91%8A_2017324172820_AD1.jpg);
 }
 .main-content-bottom-two {
   background-color: #9588e4;

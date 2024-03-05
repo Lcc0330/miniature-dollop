@@ -18,7 +18,7 @@ const Login = props => {
   }
   const fetchObject = async () => {
     const ossUrl =
-      'http://user-info-bucket.oss-cn-hangzhou.aliyuncs.com/user-info.json'
+      'https://user-info-bucket.oss-cn-hangzhou.aliyuncs.com/data.json'
 
     try {
       const response = await fetch(ossUrl, { method: 'get', mode: 'cors' })
@@ -28,7 +28,7 @@ const Login = props => {
       const data = (await response.json()) || []
       if (Array.isArray(data)) {
         const findItem = data?.find(item => {
-          return item?.idNumber + '' === userId + ''
+          return item?.ID + '' === userId + ''
         })
         console.log(response, 'sdd', data, findItem, userId)
         if (findItem) {

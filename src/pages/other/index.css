@@ -1,0 +1,50 @@
+.OtherPage {
+  padding-bottom: 95px;
+}
+.OtherPage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ea6b42;
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 30px;
+  padding-right: 20px;
+  background-color: white;
+  z-index: 9999;
+}
+.OtherPage-top-icon {
+  background-image: url(../img//back.png);
+  height: 100%;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.OtherPage-top-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.OtherPage-content {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.OtherPage-img-km1 {
+  background-image: url(../img/km1.png);
+}
+.OtherPage-img-km2 {
+  background-image: url(../img/km2.png);
+}
+.OtherPage-img-km3 {
+  background-image: url(../img/km3.png);
+}
+.OtherPage-img-jxpj {
+  background-image: url(../img/jxpj.png);
+}
+.OtherPage-img-myd {
+  background-image: url(../img/myd.png);
+}
+.OtherPage-img-jl {
+  background-image: url(../img/jl.png);
+}

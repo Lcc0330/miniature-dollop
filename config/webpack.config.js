@@ -152,7 +152,8 @@ module.exports = function (webpackEnv) {
                       viewportUnit: 'vw', // (String) Expected units.
                       selectorBlackList: [], // (Array) The selectors to ignore and leave as px.
                       minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
-                      mediaQuery: false // (Boolean) Allow px to be converted in media queries.
+                      mediaQuery: false, // (Boolean) Allow px to be converted in media queries.
+                      propList: ['*', '!font-size']
                     }
                   ],
                   // Adds PostCSS Normalize as the reset css with default options,

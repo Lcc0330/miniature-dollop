@@ -64,7 +64,7 @@
   color: white;
 }
 .UserInfo-base-info {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 400;
   color: white;
   flex: 1;
@@ -87,15 +87,18 @@
   width: 115px;
 }
 .UserInfo-base-info-vip {
+  margin-top: 4px;
   border-radius: 8px;
   background-color: white;
   width: 115px;
+  color: #ea6b42;
+  text-align: center;
 }
 .UserInfo-subject {
   background-color: #e4e4e4;
 }
 .UserInfo-subject-title {
-  font-size: 23px;
+  font-size: 25px;
   color: #66667f;
   background-color: white;
   padding: 30px 40px;
@@ -146,7 +149,7 @@
   height: 100%;
 }
 .UserInfo-subject-item-text {
-  font-size: 16px;
+  font-size: 18px;
 }
 .UserInfo-subject-itemWrap2 > .UserInfo-subject-item {
   flex: 1 1 24% !important;

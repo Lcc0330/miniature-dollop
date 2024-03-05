@@ -5,6 +5,7 @@ import './index.css'
 import App1 from './App'
 import App2 from './pages/login'
 import App3 from './pages/user'
+import App4 from './pages/other'
 
 import reportWebVitals from './reportWebVitals'
 
@@ -20,6 +21,10 @@ const routes = [
   {
     path: '/user',
     element: <App3 />
+  },
+  {
+    path: '/other',
+    element: <App4 />
   }
 ]
 function RouterView () {
@@ -32,11 +37,6 @@ root.render(
     <Router>
       <RouterView />
     </Router>
-    {/* <App1 /> */}
-    {/* <App2 />
-
-
-    <App3 /> */}
   </React.StrictMode>
 )
 
