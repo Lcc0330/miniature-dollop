@@ -135,6 +135,7 @@
   right: 0px;
   padding: 4px;
   font-size: 14px;
+  transform:  translateY(-50%);
 }
 .UserInfo-subject-item-extr {
   color: red;
