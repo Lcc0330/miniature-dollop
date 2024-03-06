@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import OSS  from'ali-oss'
 import { useNavigate } from 'react-router-dom'
 import yuyue from './pages/img/1.1.jpg'
 import xinwen from './pages/img/2.2.jpg'
@@ -19,7 +18,11 @@ function App () {
   },[])
   return (
     <div className={styles[preFixCls]}>
-      <div className='main-banner'></div>
+      <div className='main-banner'>
+        <div className='main-banner-title'>
+          徐州市
+        </div>
+      </div>
       <div className='main-content'>
         <div className='main-content-top'>
           <div className='main-content-top-one'>

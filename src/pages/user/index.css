@@ -64,7 +64,7 @@
   color: white;
 }
 .UserInfo-base-info {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 400;
   color: white;
   flex: 1;
@@ -74,7 +74,7 @@
   margin-bottom: 5px;
 }
 .UserInfo-base-info-vipmoney {
-  font-size: 22px;
+  font-size: 26px;
   display: flex;
   color: #ea6b42;
   text-align: center;
@@ -91,7 +91,7 @@
 }
 .UserInfo-base-info-vip {
   width: fit-content;
-  font-size: 22px;
+  font-size: 26px;
   margin-top: 4px;
   border-radius: 8px;
   background-color: white;
@@ -104,11 +104,12 @@
   background-color: #e4e4e4;
 }
 .UserInfo-subject-title {
-  font-size: 25px;
+  font-size: 28px;
   color: #66667f;
   background-color: white;
   padding: 30px 40px;
   font-weight: 400;
+  margin-bottom: 2px;
 }
 .UserInfo-subject-itemWrap {
   display: flex;
@@ -145,8 +146,8 @@
   font-size: 16px;
 }
 .UserInfo-subject-item-pic {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   margin-bottom: 20px;
 }
 .UserInfo-subject-item-pic img {
@@ -165,7 +166,7 @@
   bottom: 0;
   width: 100%;
   height: 90px;
-  font-size: 18px;
+  font-size: 10px;
   text-align: center;
   color: #b8b8b8;
   background-color: white;
@@ -175,8 +176,8 @@
   flex: 1;
 }
 .UserInfo-bottom img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
 }
 .UserInfo-bottom-activeItem {
   color: #ea6b42;
