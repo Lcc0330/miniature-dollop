@@ -1,13 +1,6 @@
 import { useState,useEffect } from 'react'
 import { useNavigate ,useLocation} from 'react-router-dom'
 import './index.css'
-import jxpj from '../img/jxpj.png'
-import km1 from '../img/km1.png'
-import km2 from '../img/km2.png'
-import km3 from '../img/km3.png'
-import myd from '../img/myd.png'
-
-import jl from '../img/jl.png'
 
 const OtherPage = () => {
   const [info, setInfo] = useState({})
