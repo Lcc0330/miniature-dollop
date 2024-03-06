@@ -36,7 +36,7 @@ function App () {
               <img className='main-content-icon' alt= "" src={school} />
             </div>
             <div className='main-content-top-two-three' >
-              <span className='main-content-title' >新闻广告</span>
+              <span className='main-content-title' >新闻公告</span>
               {/* <img className='main-content-icon' src={xinwen} alt=""/> */}
               <img className='main-content-icon' alt= "" src={xinwen} />
 
@@ -69,6 +69,9 @@ function App () {
 
             </div>
         </div>
+      </div>
+      <div className='main-bottom'>
+      版权所有：无锡赛博盈科科技有限公司 苏ICP备09094489号-13 苏公网安备32021102001675号
       </div>
     </div>
   )
