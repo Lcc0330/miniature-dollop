@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import loginIcon from '../img/login_logo.png'
 import './index.css'
 const Login = props => {
   const navigate = useNavigate()
@@ -49,11 +49,7 @@ const Login = props => {
         <div className='login-top-adress'>徐州市</div>
       </div>
       <div className='login-content'>
-        <img
-          className='login-banner'
-          src='http://cyberxueche.oss-cn-qingdao.aliyuncs.com/cyber-m-web/%E6%B1%9F%E8%8B%8F%E9%A9%BE%E5%9F%B9/%E9%A6%96%E9%A1%B5/login_logo.png'
-          alt=''
-        />
+        <img className='login-banner' src={loginIcon} alt='' />
         <div className='login-tabWarp'>
           <div className={`login-tab login-activetab`}>
             学员
