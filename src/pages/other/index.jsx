@@ -11,7 +11,6 @@ const OtherPage = () => {
     if (location.state) {
       setInfo(location.state.pageType)
     }
-    console.log(location.state,'location.state')
   }, [location.state])
   return (
     <div style={{ position: 'fixed', width: '100%', zIndex: 999 }}>

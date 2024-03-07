@@ -30,7 +30,6 @@ const Login = props => {
         const findItem = data?.find(item => {
           return item?.ID + '' === userId + ''
         })
-        console.log(response, 'sdd', data, findItem, userId)
         if (findItem) {
           // if (findItem?.passWord + '' === passWord + '') {
           navigate('/user', { state: { data: findItem } })
