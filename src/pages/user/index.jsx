@@ -20,6 +20,7 @@ import erweima from '../img/erweima.jpg'
 import login1 from '../img/login1.jpg'
 import my from '../img/my.png'
 import home from '../img/home.png'
+import QR from '../img/qrcode.png'
 
 import './index.css'
 
@@ -27,6 +28,7 @@ const UserInfo = () => {
   const [info, setInfo] = useState({})
   const [activeTab, setActiveTab] = useState('my')
   const [topPosition, setTopPosition] = useState('relative')
+  const [showQR,setShowQR]=useState(false)
   const divRef = useRef(null)
   const location = useLocation()
   const navigate = useNavigate()
@@ -38,8 +40,9 @@ const UserInfo = () => {
   }, [location.state])
   return (
     <div className='UserInfo'>
+      <div>
       <div
-        style={{ position: 'fixed', width: '100%', zIndex: 999 }}
+        style={{ position: 'fixed', width: '100%', zIndex: 9999 }}
         ref={divRef}
       >
         <div className='UserInfo-top'>
@@ -86,7 +89,6 @@ const UserInfo = () => {
             </div>
         </div>
       </div>
-
       <div className='UserInfo-subject'>
         <div className='UserInfo-subject-title'>我的课程</div>
         <div className='UserInfo-subject-itemWrap'>
@@ -206,7 +208,7 @@ const UserInfo = () => {
             <div className='UserInfo-subject-item-pic'>
               <img src={erweima} alt='' />
             </div>
-            <div className='UserInfo-subject-item-text'>我的二维码</div>
+            <div className='UserInfo-subject-item-text' onClick={()=>setShowQR(true)}>我的二维码</div>
           </div>
           <div className='UserInfo-subject-item'>
             <div className='UserInfo-subject-item-pic'>
@@ -250,6 +252,20 @@ const UserInfo = () => {
         </div>
         <div className='UserInfo-bottom-item'></div>
       </div>
+      </div>
+     {showQR? <div className='UserInfo-ModalWarp'>
+        <div className='UserInfo-Modal'>
+          <div className='UserInfo-Modal-title'>
+            签到签退二维码
+          </div>
+          <div className='UserInfo-Modal-content'>
+            <img alt="" src={QR}></img>
+          </div>
+          <div className='UserInfo-Modal-bottom' onClick={()=>setShowQR(false)}>
+            关闭
+          </div>
+        </div>
+      </div>:null}
     </div>
   )
 }

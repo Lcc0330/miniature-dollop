@@ -183,3 +183,32 @@
 .UserInfo-bottom-activeItem {
   color: #ea6b42;
 }
+.UserInfo-ModalWarp {
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(127, 127, 127, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.UserInfo-Modal {
+  background-color: white;
+  width: 80%;
+  border-radius: 8px;
+  text-align: center;
+}
+.UserInfo-Modal-title {
+  text-align: left;
+  padding: 20px;
+}
+.UserInfo-Modal-bottom {
+  padding: 20px;
+}
+.UserInfo-Modal-content {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
