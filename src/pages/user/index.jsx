@@ -204,11 +204,11 @@ const UserInfo = () => {
             </div>
             <div className='UserInfo-subject-item-text'>注销</div>
           </div>
-          <div className='UserInfo-subject-item'>
+          <div className='UserInfo-subject-item' onClick={()=>setShowQR(true)}>
             <div className='UserInfo-subject-item-pic'>
               <img src={erweima} alt='' />
             </div>
-            <div className='UserInfo-subject-item-text' onClick={()=>setShowQR(true)}>我的二维码</div>
+            <div className='UserInfo-subject-item-text' >我的二维码</div>
           </div>
           <div className='UserInfo-subject-item'>
             <div className='UserInfo-subject-item-pic'>
