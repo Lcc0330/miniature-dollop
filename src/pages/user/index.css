@@ -204,9 +204,11 @@
 .UserInfo-Modal-title {
   text-align: left;
   padding: 20px;
+  font-size: 30px;
 }
 .UserInfo-Modal-bottom {
   padding: 20px;
+  font-size: 24px;
 }
 .UserInfo-Modal-content {
   border-top: 1px solid #ccc;
