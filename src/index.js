@@ -6,6 +6,7 @@ import App1 from './App'
 import App2 from './pages/login'
 import App3 from './pages/user'
 import App4 from './pages/other'
+import Operate from './pages/Operate'
 
 import reportWebVitals from './reportWebVitals'
 
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/other',
     element: <App4 />
+  },
+  {
+    path: '/operate',
+    element: <Operate />
   }
 ]
 function RouterView () {
