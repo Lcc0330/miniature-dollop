@@ -7,7 +7,7 @@ import person from './pages/img/5.5.jpg'
 import gold from './pages/img/6.6.jpg'
 import baoming from './pages/img/7.7.jpg'
 import styles from './App.css'
-// import OperateIndex from './pages/Operate'
+import OperateIndex from './pages/Operate'
 const preFixCls = 'main'
 function App() {
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ function App() {
   }, [])
   return (
     <div className={styles[preFixCls]}>
-      {/* <OperateIndex /> */}
+      <OperateIndex />
       <div className='main-banner'>
         <div className='main-banner-title'>
           徐州市
