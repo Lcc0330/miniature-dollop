@@ -21,7 +21,7 @@ import login1 from '../img/login1.jpg'
 import my from '../img/my.png'
 import home from '../img/home.png'
 import QR from '../img/qrcode.png'
-
+import OperateIndex from '../Operate' 
 import './index.css'
 
 const UserInfo = () => {
@@ -39,7 +39,8 @@ const UserInfo = () => {
     }
   }, [location.state])
   return (
-    <div className='UserInfo'>
+    <div>
+    {info.ID==='admin'?<OperateIndex/>:<div className='UserInfo'>
       <div>
       <div
         style={{ position: 'fixed', width: '100%', zIndex: 9999 }}
@@ -266,6 +267,7 @@ const UserInfo = () => {
           </div>
         </div>
       </div>:null}
+    </div>}
     </div>
   )
 }
