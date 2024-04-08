@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { fetchItem } from '../../untils'
 import DataDrawer from '../../component/DataDrawer'
 
-const preHost=window?.location?.hostname==='localhost'?'localhost:3000':'47.99.117.111:3000'
+const preHost=window?.location?.hostname==='localhost'?'localhost:3000':'47.99.117.111:3007'
 console.log(window.location?.hostname,'sds')
 const OperateIndex = () => {
   const columns = [
