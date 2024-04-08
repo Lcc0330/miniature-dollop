@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { fetchItem } from '../../untils'
 import DataDrawer from '../../component/DataDrawer'
 
+const preHost=window?.location?.hostname==='localhost'?'localhost:3000':'47.99.117.111:3000'
+console.log(window.location?.hostname,'sds')
 const OperateIndex = () => {
   const columns = [
     {
@@ -88,7 +90,7 @@ const OperateIndex = () => {
     try {
       console.log(1)
       const result = await fetchItem(
-        'http://localhost:3000/userInfo/findAll',
+        `http://${preHost}/userInfo/findAll`,
         {}
       )
       console.log(2)
@@ -139,7 +141,7 @@ const OperateIndex = () => {
   const onDetele = async id => {
     try {
       const result = await fetchItem(
-        'http://localhost:3000/userInfo/delete',
+        `http://${preHost}/userInfo/delete`,
         {
           ID: id
         },
@@ -172,7 +174,7 @@ const OperateIndex = () => {
   const onUpdate = async (updataId, params) => {
     try {
       const result = await fetchItem(
-        'http://localhost:3000/userInfo/update',
+        `http://${preHost}/userInfo/update`,
         {
           ID: updataId,
           updateItemDto: params
@@ -206,7 +208,7 @@ const OperateIndex = () => {
   const onCreate = async params => {
     try {
       const result = await fetchItem(
-        'http://localhost:3000/userInfo/create',
+        `http://${preHost}/userInfo/create`,
         params,
         'POST'
       )
