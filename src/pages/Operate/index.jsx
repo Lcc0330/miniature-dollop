@@ -1,23 +1,26 @@
-import { Table, message, Button } from 'antd'
+import { Table, message, Button, Popconfirm, Form, Input } from 'antd'
 import { useState, useEffect } from 'react'
 import { fetchItem } from '../../untils'
 import DataDrawer from '../../component/DataDrawer'
 
-const preHost=window?.location?.hostname==='localhost'?'localhost:3000':'47.99.117.111:3007'
-console.log(window.location?.hostname,'sds')
+const preHost =
+  window?.location?.hostname === 'localhost'
+    ? 'localhost:3000'
+    : '47.99.117.111:3007'
+console.log(window.location?.hostname, 'sds')
 const OperateIndex = () => {
   const columns = [
     {
       title: '身份证号',
       dataIndex: 'ID',
       key: 'ID',
-      render:(text,record)=>{
-        return(
-            <div>
-                <div>{record?.name}</div>
-                {/* <div>身份证：</div> */}
-                <div>{text}</div>
-            </div>
+      render: (text, record) => {
+        return (
+          <div>
+            <div>{record?.name}</div>
+            {/* <div>身份证：</div> */}
+            <div>{text}</div>
+          </div>
         )
       }
     },
@@ -33,7 +36,7 @@ const OperateIndex = () => {
       key: 'status'
     },
     {
-      title: '类型',
+      title: '驾照类型',
       dataIndex: 'category',
       key: 'category'
     },
@@ -46,35 +49,60 @@ const OperateIndex = () => {
       title: '学时',
       dataIndex: 'subjectHours',
       key: 'subjectHours',
-      render:(text,record)=>{
-        console.log(text,'sd?')
+      render: (text, record) => {
+        console.log(text, 'sd?')
 
-        return<div>
-            <div>科目一：{typeof text?.subjectOne ==='number'&& parseFloat(text?.subjectOne?.toFixed?.(2))} </div>
-            <div>科目二：{typeof text?.subjectTwo ==='number'&& parseFloat(text?.subjectTwo?.toFixed?.(2))}</div>
-            <div>科目三：{typeof text?.subjectThree ==='number'&& parseFloat(text?.subjectThree?.toFixed?.(2))}</div>
-        </div>
-
+        return (
+          <div>
+            <div>
+              科目一：
+              {typeof text?.subjectOne === 'number' &&
+                parseFloat(text?.subjectOne || 0)?.toFixed?.(2)}{' '}
+            </div>
+            <div>
+              科目二：
+              {typeof text?.subjectTwo === 'number' &&
+                parseFloat(text?.subjectTwo || 0)?.toFixed?.(2)}
+            </div>
+            <div>
+              科目三：
+              {typeof text?.subjectThree === 'number' &&
+                parseFloat(text?.subjectThree || 0)?.toFixed?.(2)}
+            </div>
+          </div>
+        )
       }
     },
     {
       title: '操作',
       dataIndex: 'operate',
       key: 'operate',
-      fixed:'right',
+      fixed: 'right',
 
       render: (t, record) => {
         return (
           <>
             <Button
-              onClick={() => setDataDrawer({ visible: true, data: record })}
+              onClick={() =>
+                setDataDrawer({ visible: true, data: record, type: 'edit' })
+              }
               type='link'
             >
               更新
             </Button>
-            <Button onClick={() => onDetele(record?.ID)} type='link'>
-              删除
-            </Button>
+            <Popconfirm
+              title={'是否确认删除？'}
+              onConfirm={() => onDetele(record?.ID)}
+              okText='确认'
+              cancelText='取消'
+            >
+              <Button
+                // onClick={() => onDetele(record?.ID)}
+                type='link'
+              >
+                删除
+              </Button>
+            </Popconfirm>
           </>
         )
       }
@@ -85,12 +113,18 @@ const OperateIndex = () => {
   const [searchName, setSearchName] = useState('')
   const [searchID, setSearchID] = useState('')
   const [dataDrawer, setDataDrawer] = useState({})
-
+  const [searchForm] = Form.useForm()
   const init = async () => {
     try {
+      const preHost =
+        window?.location?.hostname === 'localhost'
+          ? 'localhost:3000'
+          : '47.99.117.111:3007'
+
       console.log(1)
       const result = await fetchItem(
         `http://${preHost}/userInfo/findAll`,
+        // 'http://localhost:3000/userInfo/findAll',
         {}
       )
       console.log(2)
@@ -110,30 +144,36 @@ const OperateIndex = () => {
       console.log(err, 'sd')
       messageApi.open({
         type: 'error',
-        content: err
+        content: '请求失败'
       })
     }
   }
-  const onSearch = async () => {
+  const onSearch = async value => {
     try {
-      const result = await fetchItem('http://localhost:3000/userInfo/findOne', {
-        name: searchName,
-        ID: searchID
-      })
+      const result = await fetchItem(
+        `http://${preHost}/userInfo/findOne`,
+        {
+          name: value?.name || '',
+          ID: value?.ID || ''
+        },
+        'POST'
+      )
+      console.log(result, 'result')
       if (result.success) {
-        setData(result.data)
+        setData(result.data || [])
       } else {
         // message.error(result.data)
         messageApi.open({
           type: 'error',
-          content: result.data
+          content: result.data || result?.message?.error
         })
       }
     } catch (err) {
       // message.error(err)
+      console.log(JSON.stringify(err), 'err')
       messageApi.open({
         type: 'error',
-        content: err
+        content: '搜索失败'
       })
     }
   }
@@ -149,8 +189,8 @@ const OperateIndex = () => {
       )
       if (result.success) {
         messageApi.open({
-            type:'success',
-            content:'删除成功'
+          type: 'success',
+          content: '删除成功'
         })
         init()
         // setData(result.data)
@@ -159,7 +199,6 @@ const OperateIndex = () => {
         messageApi.open({
           type: 'error',
           content: `删除失败 ${result.data || result?.message?.message || ''}`
-
         })
       }
     } catch (err) {
@@ -167,7 +206,6 @@ const OperateIndex = () => {
       messageApi.open({
         type: 'error',
         content: `删除失败 ${err.data || err?.message || ''}`
-
       })
     }
   }
@@ -183,14 +221,14 @@ const OperateIndex = () => {
       )
       if (result.success) {
         messageApi.open({
-            type:'success',
-            content:'更新成功'
+          type: 'success',
+          content: '更新成功'
         })
         init()
         // setData(result.data)
       } else {
         // message.error(result.data)
-        console.log(result,'???')
+        console.log(result, '???')
         messageApi.open({
           type: 'error',
           content: `更新失败 ${result.data || result?.message?.message || ''}`
@@ -198,7 +236,7 @@ const OperateIndex = () => {
       }
     } catch (err) {
       // message.error(err)
-      console.log(err,'sdd')
+      console.log(err, 'sdd')
       messageApi.open({
         type: 'error',
         content: `更新失败 ${err?.message}`
@@ -214,8 +252,8 @@ const OperateIndex = () => {
       )
       if (result.success) {
         messageApi.open({
-            type:'success',
-            content:'新建成功'
+          type: 'success',
+          content: '新建成功'
         })
         init()
         // setData(result.data)
@@ -224,42 +262,69 @@ const OperateIndex = () => {
         messageApi.open({
           type: 'error',
           content: `新建失败 ${result.data || result?.message?.message || ''}`
-
         })
       }
     } catch (err) {
       // message.error(err)
       messageApi.open({
         type: 'error',
-          content: `新建失败 ${err.data ||err?.message || ''}`
+        content: `新建失败 ${err.data || err?.message || ''}`
       })
     }
   }
-  const onOK= (id,params)=>{
-    if(id){
-        setDataDrawer({})
-        onUpdate(id,params)
-    }else{
-        setDataDrawer({})
+  const onOK = (id, params) => {
+    if (id) {
+      setDataDrawer({})
+      onUpdate(id, params)
+    } else {
+      setDataDrawer({})
 
-        onCreate(params)
+      onCreate(params)
     }
-
   }
   useEffect(() => {
     init()
   }, [])
   return (
     <>
-    {contextHolder}
-      <Button onClick={() => setDataDrawer({ visible: true, data: {} })} type='primary'>
+      {contextHolder}
+      <Button
+        onClick={() => setDataDrawer({ visible: true, data: {} })}
+        type='primary'
+      >
         新增
       </Button>
-      <Table dataSource={data} columns={columns} scroll={{x:'max-content'}}style={{whiteSpace:'nowrap'}}></Table>
+      <div>
+        <Form
+          // layout='vertical'
+          layout='inline'
+          form={searchForm}
+          onFinish={onSearch}
+          preserve={false}
+        >
+          <Form.Item label={'身份证号'} name='ID'>
+            <Input />
+          </Form.Item>
+          <Form.Item label={'姓名'} name='name'>
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button onClick={() => searchForm.submit()} type='primary'>
+              搜索
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+      <Table
+        dataSource={data}
+        columns={columns}
+        scroll={{ x: 'max-content' }}
+        style={{ whiteSpace: 'nowrap' }}
+      ></Table>
       <DataDrawer
-       openData={dataDrawer} 
-      onClose={() => setDataDrawer({})} 
-      onOK={onOK}
+        openData={dataDrawer}
+        onClose={() => setDataDrawer({})}
+        onOK={onOK}
       />
     </>
   )

@@ -121,28 +121,28 @@ const UserInfo = () => {
         <div>
           <div className='UserInfo-subject-itemWrap'>
             <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'km1'},data:info} })}>
-              <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目一}</div>
+              <div className='UserInfo-subject-item-tip'> {info?.subjectHours?.subjectOne}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu1} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目一</div>
             </div>
             <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state:{pageType: {title:'训练信息',type:'km2'},data:info} })}>
-              <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目二}</div>
+              <div className='UserInfo-subject-item-tip'> {info?.subjectHours?.subjectTwo}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu2} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目二</div>
             </div>
             <div className='UserInfo-subject-item' onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'km3'},data:info} })}>
-              <div className='UserInfo-subject-item-tip'> {info?.subject_hours?.科目三}</div>
+              <div className='UserInfo-subject-item-tip'> {info?.subjectHours?.subjectThree}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={kemu3} alt='' />
               </div>
               <div className='UserInfo-subject-item-text'>科目三</div>
             </div>
             <div className='UserInfo-subject-item'  onClick={()=>navigate('/other',{ state: {pageType:{title:'训练信息',type:'jl'},data:info} })}>
-              <div className='UserInfo-subject-item-tip'> {(info?.subject_hours?.科目一+info?.subject_hours?.科目二+info?.subject_hours?.科目三)?.toFixed(2)}</div>
+              <div className='UserInfo-subject-item-tip'> {(info?.subjectHours?.subjectOne+info?.subjectHours?.subjectTwo+info?.subjectHours?.subjectThree)?.toFixed(2)}</div>
               <div className='UserInfo-subject-item-pic'>
                 <img src={jilu} alt='' />
               </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import loginIcon from '../img/login_logo.png'
+import { fetchItem } from '../../untils'
 import './index.css'
 const Login = props => {
   const navigate = useNavigate()
@@ -14,22 +15,22 @@ const Login = props => {
       alert(text)
       return
     }
-    if(userId==='admin' &&passWord==='123'){
-      const aa={
-        "_id": {
-          "$oid": "admin"
+    if (userId === 'admin' && passWord === '123') {
+      const aa = {
+        _id: {
+          $oid: 'admin'
         },
-        "name": "管理员",
-        "category": "C2",
-        "phone": "15862208952",
-        "ID": "admin",
-        "status": "结业",
-        "drivingSchool": "睢宁恒安",
-        "passWord": "123456",
-        "subject_hours": {
-          "科目二": 12.67,
-          "科目三": 24.78,
-          "科目一": 13.45
+        name: '管理员',
+        category: 'C2',
+        phone: '15862208952',
+        ID: 'admin',
+        status: '结业',
+        drivingSchool: '睢宁恒安',
+        passWord: '123456',
+        subject_hours: {
+          科目二: 12.67,
+          科目三: 24.78,
+          科目一: 13.45
         }
       }
       navigate('/user', { state: { data: aa } })
@@ -40,29 +41,65 @@ const Login = props => {
   const fetchObject = async () => {
     const ossUrl =
       'https://user-info-bucket.oss-cn-hangzhou.aliyuncs.com/data.json'
+    // try {
+    //   const response = await fetch(ossUrl, { method: 'get', mode: 'cors' })
+    //   if (!response.ok) {
+    //     throw new Error(`请求失败，${response.status}`)
+    //   }
+    //   const data = (await response.json()) || []
+    //   if (Array.isArray(data)) {
+    //     const findItem = data?.find(item => {
+    //       return item?.ID + '' === userId + ''
+    //     })
+    //     if (findItem) {
+    //       // if (findItem?.passWord + '' === passWord + '') {
+    //       navigate('/user', { state: { data: findItem } })
+    //       // } else {
+    //       //   alert('密码错误')
+    //       // }
+    //     } else {
+    //       alert('-1||不存在此身份证号的学员')
+    //     }
+    //   }
+    // } catch (err) {
+    //   console.log(err, 'err')
+    // }
+    const preHost =
+      window?.location?.hostname === 'localhost'
+        ? 'localhost:3000'
+        : '47.99.117.111:3007'
 
     try {
-      const response = await fetch(ossUrl, { method: 'get', mode: 'cors' })
-      if (!response.ok) {
-        throw new Error(`请求失败，${response.status}`)
-      }
-      const data = (await response.json()) || []
-      if (Array.isArray(data)) {
-        const findItem = data?.find(item => {
-          return item?.ID + '' === userId + ''
-        })
-        if (findItem) {
-          // if (findItem?.passWord + '' === passWord + '') {
-          navigate('/user', { state: { data: findItem } })
-          // } else {
-          //   alert('密码错误')
-          // }
-        } else {
-          alert('-1||不存在此身份证号的学员')
+      const result = await fetchItem(
+        `http://${preHost}/userInfo/findOne`,
+        {
+          ID: userId || ''
+        },
+        'POST'
+      )
+      if (result.success) {
+        // navigate('/user', { state: { data: result?.data } })
+        if (Array.isArray(result?.data)) {
+          const findItem = result?.data?.find(item => {
+            return item?.ID + '' === userId + ''
+          })
+          if (findItem) {
+            // if (findItem?.passWord + '' === passWord + '') {
+            navigate('/user', { state: { data: findItem } })
+            // } else {
+            //   alert('密码错误')
+            // }
+          } else {
+            alert('-1||不存在此身份证号的学员')
+          }
         }
+      } else {
+        // message.error(result.data)
+        alert('-1||不存在此身份证号的学员')
       }
     } catch (err) {
-      console.log(err, 'err')
+      // message.error(err)
+      console.log(JSON.stringify(err), 'err')
     }
   }
   return (
