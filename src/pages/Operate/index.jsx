@@ -50,8 +50,6 @@ const OperateIndex = () => {
       dataIndex: 'subjectHours',
       key: 'subjectHours',
       render: (text, record) => {
-        console.log(text, 'sd?')
-
         return (
           <div>
             <div>
@@ -128,7 +126,6 @@ const OperateIndex = () => {
         {}
       )
       console.log(2)
-      console.log(result, 'result init')
 
       if (result.success) {
         setData(result.data)
@@ -158,7 +155,6 @@ const OperateIndex = () => {
         },
         'POST'
       )
-      console.log(result, 'result')
       if (result.success) {
         setData(result.data || [])
       } else {
@@ -228,7 +224,6 @@ const OperateIndex = () => {
         // setData(result.data)
       } else {
         // message.error(result.data)
-        console.log(result, '???')
         messageApi.open({
           type: 'error',
           content: `更新失败 ${result.data || result?.message?.message || ''}`
