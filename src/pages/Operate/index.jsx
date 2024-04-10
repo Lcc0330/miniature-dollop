@@ -284,15 +284,24 @@ const OperateIndex = () => {
     <>
       {contextHolder}
 
-      <div style={{margin: 15}}>
+      <div style={{ margin: 15 }}>
         <Form
           // layout='vertical'
           layout='inline'
           form={searchForm}
           onFinish={onSearch}
           preserve={false}
+          labelCol={{ span: 6 }}
         >
-          <Form.Item label={'身份证号'} name='ID'>
+          <Form.Item
+            label={
+              <span>
+                <div>身份</div>
+                <div>证号</div>
+              </span>
+            }
+            name='ID'
+          >
             <Input />
           </Form.Item>
           <Form.Item label={'姓名'} name='name'>
@@ -305,13 +314,12 @@ const OperateIndex = () => {
             <Button
               onClick={() => setDataDrawer({ visible: true, data: {} })}
               type='primary'
-              style={{marginLeft:15}}
+              style={{ marginLeft: 15 }}
             >
               新增
             </Button>
           </Form.Item>
         </Form>
-        
       </div>
 
       <Table

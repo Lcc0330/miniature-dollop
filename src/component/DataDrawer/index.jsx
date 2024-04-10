@@ -1,9 +1,9 @@
-import { Drawer, Form, Input, InputNumber, Button,Popconfirm } from 'antd'
+import { Drawer, Form, Input, InputNumber, Button, Popconfirm } from 'antd'
 import { useState, useEffect } from 'react'
 const DataDrawer = props => {
   const { openData = {}, onClose = () => {}, onOK = () => {} } = props
   //   const [data, setData] = useState([])
-  const isEdit =openData?.type==='edit'
+  const isEdit = openData?.type === 'edit'
   const [baseForm] = Form.useForm()
 
   const onFinish = value => {
@@ -23,14 +23,17 @@ const DataDrawer = props => {
             okText='确认'
             cancelText='取消'
           >
-            <Button 
-            // onClick={() => baseForm.submit()}
-             type='primary'>
+            <Button
+              // onClick={() => baseForm.submit()}
+              type='primary'
+            >
               {' '}
               提交
             </Button>
           </Popconfirm>
-          <Button onClick={onClose}>取消</Button>
+          <Button onClick={onClose} style={{ marginLeft: 15 }}>
+            取消
+          </Button>
         </>
       }
       destroyOnClose={true}
@@ -48,7 +51,7 @@ const DataDrawer = props => {
           rules={[{ required: true, message: '请输入身份证号' }]}
           disabled={isEdit}
         >
-          <Input/>
+          <Input />
         </Form.Item>
         <Form.Item
           name='name'
