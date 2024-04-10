@@ -283,13 +283,8 @@ const OperateIndex = () => {
   return (
     <>
       {contextHolder}
-      <Button
-        onClick={() => setDataDrawer({ visible: true, data: {} })}
-        type='primary'
-      >
-        新增
-      </Button>
-      <div>
+
+      <div style={{margin: 15}}>
         <Form
           // layout='vertical'
           layout='inline'
@@ -307,9 +302,18 @@ const OperateIndex = () => {
             <Button onClick={() => searchForm.submit()} type='primary'>
               搜索
             </Button>
+            <Button
+              onClick={() => setDataDrawer({ visible: true, data: {} })}
+              type='primary'
+              style={{marginLeft:15}}
+            >
+              新增
+            </Button>
           </Form.Item>
         </Form>
+        
       </div>
+
       <Table
         dataSource={data}
         columns={columns}
